@@ -93,7 +93,7 @@ grid.addEventListener('click', () => {
   overlay.style.height = '100%';
 
     setTimeout(() => {
-    const url ='/Pages/Architecture.html';
+    const url ='/pages/Architecture.html';
     window.location.href =url;
     }, 2000);
   
@@ -104,7 +104,7 @@ Environ.addEventListener('click', () => {
   overlayE.style.height = '100%';
 
     setTimeout(() => {
-    const url ='/Pages/Environment.html';
+    const url ='/pages/Environment.html';
     window.location.href =url;
     }, 500);
   
@@ -115,7 +115,7 @@ Portait.addEventListener('click', () => {
   overlayP.style.height = '100%';
 
     setTimeout(() => {
-    const url ='/Pages/Portraits.html';
+    const url ='/pages/Portraits.html';
     window.location.href =url;
     }, 500);
   
@@ -126,7 +126,7 @@ Geometry.addEventListener('click', () => {
   overlayG.style.height = '100%';
 
     setTimeout(() => {
-    const url ='/Pages/GeometryN.html';
+    const url ='/pages/GeometryN.html';
     window.location.href =url;
     }, 500);
   
@@ -137,7 +137,7 @@ Weapon.addEventListener('click', () => {
   overlayWP.style.height = '100%';
 
     setTimeout(() => {
-    const url ='/Pages/Weapons.html';
+    const url ='/pages/Weapons.html';
     window.location.href =url;
     }, 500);
   
@@ -148,7 +148,7 @@ Wierd.addEventListener('click', () => {
   overlayW.style.height = '100%';
 
     setTimeout(() => {
-    const url ='/Pages/Wierd Stuff.html';
+    const url ='/pages/Wierd Stuff.html';
     window.location.href =url;
     }, 500);
   
