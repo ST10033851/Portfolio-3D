@@ -53,7 +53,7 @@ back.addEventListener('click', () =>{
 
       //navigate to the home page 
     setTimeout(() =>{
-        const url = '/pages/index.html';
+        const url = '/index.html';
         window.location.href =url;   
     }, 600)
 })
