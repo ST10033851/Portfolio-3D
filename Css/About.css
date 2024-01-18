@@ -25,14 +25,12 @@
 body{ 
     overflow-x: hidden;
 }
-.box-container{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background:linear-gradient(180deg, #4e54c8 0%, #8f94fb 100%), #f0f0f0;
-    align-items: center;
-    justify-content: center;
+
+.home{
+    margin-bottom: 20px;
+    min-height: 100vh;
+    background:linear-gradient(180deg, #00efd1 0%, #00acea 100%), #f0f0f0;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 #gif-container img{
@@ -51,7 +49,6 @@ body{
     position: relative;
     font-size: 50px;
     padding: 2rem;
-    
     
 }
 
@@ -81,6 +78,77 @@ body{
     h2:nth-of-type(2){
         font-size: 20px;
     }
+
+    .box-container{
+        height: 50%;
+    }
+    
+}
+
+/* -- About description -- */
+.container{
+    padding:15px 9%;
+    padding-bottom: 100px;
+}
+
+.container .heading{
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.container .box-containerP{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;
+}
+
+.boxP{
+    flex: 1;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxP:first-child{
+    border-right: 2px solid #00acea;
+}
+
+.boxP:first-child h1{
+    font-size: 50px;
+}
+
+.boxP:nth-last-child(1) h1{
+    margin-left: 20px;
+}
+
+@media (max-width: 768px){
+
+    .home{
+        min-height: 50vh;
+        margin-bottom: 1px;
+    }
+    .container{
+        padding: 20px;
+    }
+
+    .boxP{
+        height: auto;
+    }
+
+    .boxP:first-child .heading{
+        font-size: 30px;
+    }
+
+    .boxP:first-child{
+        border-right: none;
+        border-bottom: 2px solid #00acea;
+    }
+
+    .boxP:nth-last-child(1) h1{
+        font-size: 20px;
+    }
 }
 
 .Bubble{
@@ -103,7 +171,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb{
-    background:linear-gradient(180deg, #4e54c8 0%, #8f94fb 100%), #f0f0f0;
+    background:linear-gradient(180deg, #00efd1 0%, #00acea 100%), #f0f0f0;
     border-radius: 3px;
 }
 
@@ -123,16 +191,21 @@ body{
     height: 800px;
   }
 
-.cursor{
-    z-index: 9999;
+  .cursor{
+    z-index: 99999;
     position: fixed;
     width: 50px;
     height: 50px;
     border: 2px solid #000;
     box-sizing: border-box;
     border-radius: 50%;
-    pointer-events: none;
     transition: .1s;
+}
+
+@media screen and (max-width:768px){
+    .cursor{
+        display: none;
+    }
 }
 
 .cursor::after {
@@ -147,20 +220,20 @@ body{
     border-radius: 50%;
   }
 
-  /* Define the magnified text */
+  
   .Bubble {
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 48px; /* double the font size */
-    transform-origin: top left; /* set the origin of the transformation */
-    transform: scale(1); /* start with normal size */
-    transition: transform .1s; /* animate the transformation */
+    font-size: 48px;
+    transform-origin: top left; 
+    transform: scale(1);
+    transition: transform .1s;
   }
   
-  /* Add the hover effect */
+  
   .text-to-magnify:hover .Bubble {
-    transform: scale(2); /* double the size */
+    transform: scale(2);
   }
   
 
@@ -197,12 +270,6 @@ body{
     transition: .3s;
 }
 
-@media screen and (max-width:768px){
-    .cursor{
-        border:transparent;
-    }
-}
-
 /* -----home transition----- */
 
 @media (min-width: 768px) {
@@ -215,9 +282,15 @@ body{
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
-        display: none;
+        display: flex;
     }
   }
+  @media screen and (max-width:768px){
+    .Row{
+        display: none;
+    }
+    
+}
 
 .grid{
     overflow: hidden;
@@ -282,61 +355,7 @@ body{
     
 }
 
-.Gallery{
-    padding-top: 1000px;
-}
 
-.Gallery .box-containerP {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 1rem;
-  }
-  .Gallery .HeadingBox {
-    margin: 0;
-    padding-right: 20px;
-    align-self: center;
-    font-size: 50px;
-  }
-
-  .Gallery .content{
-    font-size: 40px;
-  }
-
-  .Gallery .box-containerP .Box {
-    height: 40rem;
-    flex: 40rem;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-
-  .Gallery .box-containerP .Box:nth-child(1) {
-    height: 40rem; 
-    flex: 40rem;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .Gallery .box-containerP .Box::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.1rem solid #4e54c8;
-    pointer-events: none;
-    transition: .1s;
-  }
-  
-
-.Gallery .box-containerP .Box img{
-    height: 100%;
-    width: 100%;
-    object-fit:cover;
-}
 
 .content h1{
     position: relative;

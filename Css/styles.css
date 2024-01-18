@@ -43,7 +43,8 @@
     width: 750px;
     height: 100%;
     background: #f1e9e9;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     display:flex;
     flex-direction: column;
     z-index: 999;
@@ -51,7 +52,7 @@
     justify-content: center;
     user-select: none;
     counter-reset: menucounter;
-    transition: transform 1s cubic-bezier(.16, .1, .3, .1);
+    transition: transform .7s cubic-bezier(.16, .1, .3, .1);
     flex-wrap: wrap;
  }
 
@@ -65,13 +66,12 @@
  @media screen and (max-width:768px){
     .side-bar{
         width:100%;
-        right: -100%;
+        transform: translateX(100%);
     }
  }
 
  .side-bar.active{
-   transition: 1s;
-    right: 0%;
+    transform: translateX(0%);
  }
 
 .menu-item {
@@ -84,7 +84,7 @@
 
   @media screen and (max-width:768px){
     .menu-item{
-        font-size: 70px;
+        font-size: 40px;
     }
   }
 
@@ -178,6 +178,7 @@
 @media screen and (max-width:768px){
     .cursor{
         border:transparent;
+        display: none;
     }
 }
 
@@ -206,34 +207,21 @@
 
 h1{
     position: relative;
-    padding: 1rem;
     font-size: 35px;
 }
 
-.content h2{
-    margin-top: 620px;
+footer{
+    bottom: 2px;
 }
- 
-h2{
-    font-size: 25px;
-    display: inline-block;
-}
+
 
 @media screen and (max-width:768px){
     h1{
         font-size: 30px;
     }
 
-    h2{
-        left: 0%;
-        font-size: 18px;
-        display: inline-block;
-    }
-
-    h3{
-        font-size: 18px;   
-        padding-left: 20rem;
-        display: inline-block;
+    .heading{
+        font-size: 20px;
     }
    
 }
@@ -275,11 +263,6 @@ h1.TitleW:hover::after{
     width: 15%;
 }
 
-@media (max-width: 768px) {
-    .Row {
-        
-    }
-  }
 
 
 @media (min-width: 768px) {
@@ -347,12 +330,6 @@ h1.TitleW:hover::after{
     background:linear-gradient(180deg, #F09819 0%, #EDDE5D 100%), #f0f0f0;
 }
 
-@media screen and (max-width:768px){
-    .grid{
-        padding: 35px;     
-    }   
-}
-
 .small{
     position: relative;
     overflow: hidden;
@@ -397,9 +374,16 @@ header{
     align-items: center;
     right: 0px;
     z-index: 9999;
-    padding-top: 4rem;
+    padding-top: 3rem;
     padding-right: 2rem;
 }
+
+@media screen and (max-width:768px){
+    .menu-btn{
+        padding: 10px;
+    }  
+}
+
 .menu-btn:hover{
     color: #000;
 }
