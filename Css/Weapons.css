@@ -1,0 +1,369 @@
+@import url(//db.onlinewebfonts.com/c/7b9ef47e477d7db975da9dda4b155d02?family=Saol+Display);
+@import url(//db.onlinewebfonts.com/c/c0de8fb6038e76e28f87f58c819bbda8?family=Saol+Display+Light+Italic);
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/NeueMontreal-Regular.woff') format('woff2');
+    font-style: normal;
+    font-weight: 100;
+ }
+
+ @font-face {font-family: "Saol Display Light Italic"; src: url("//db.onlinewebfonts.com/t/c0de8fb6038e76e28f87f58c819bbda8.eot"); src: url("//db.onlinewebfonts.com/t/c0de8fb6038e76e28f87f58c819bbda8.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c0de8fb6038e76e28f87f58c819bbda8.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c0de8fb6038e76e28f87f58c819bbda8.woff") format("woff"), url("//db.onlinewebfonts.com/t/c0de8fb6038e76e28f87f58c819bbda8.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c0de8fb6038e76e28f87f58c819bbda8.svg#Saol Display Light Italic") format("svg"); }
+
+ @font-face 
+ {font-family: "Saol Display"; src: url("//db.onlinewebfonts.com/t/7b9ef47e477d7db975da9dda4b155d02.eot"); src: url("//db.onlinewebfonts.com/t/7b9ef47e477d7db975da9dda4b155d02.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7b9ef47e477d7db975da9dda4b155d02.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7b9ef47e477d7db975da9dda4b155d02.woff") format("woff"), url("//db.onlinewebfonts.com/t/7b9ef47e477d7db975da9dda4b155d02.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7b9ef47e477d7db975da9dda4b155d02.svg#Saol Display") format("svg");
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MyCustomFont';
+    cursor: none;
+}
+
+body{
+    
+    overflow-x: hidden;
+}
+
+.box-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(180deg, #F09819 0%, #EDDE5D 100%), #f0f0f0;
+    align-items: center;
+    justify-content: center;
+}
+
+#gif-container img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    transition: 1s ease-in;
+    display: none;
+}
+
+.box h1{
+    position: relative;
+    font-size: 50px;
+    padding: 2rem;
+    text-decoration:underline;
+}
+
+.box h2:nth-of-type(1){
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    padding: 2rem;
+}
+
+.box h2:nth-of-type(2){
+    padding: 2rem;
+    right: 0;
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
+}
+
+@media screen and (max-width:768px){
+    h1{
+        font-size: 35px;
+    }
+    h2:nth-of-type(1){
+        font-size: 20px;
+    }
+    h2:nth-of-type(2){
+        font-size: 20px;
+    }
+}
+
+.Gallery{
+    padding-top: 1000px;
+}
+
+.Gallery h3{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 50px;
+    padding-bottom: 3rem;
+    text-decoration: underline;
+}
+
+.Gallery .box-containerP{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1rem;
+}
+
+.Gallery .box-containerP .Box{
+    height: 20rem; 
+    flex: 30rem;
+    border: .1rem solid #F09819;
+    background:linear-gradient(180deg, #F09819 0%, #EDDE5D 100%), #f0f0f0;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    border-radius: .1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.Gallery .box-containerP .Box img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+
+
+/* -------scrollbar------- */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg, #F09819 0%, #EDDE5D 100%), #f0f0f0;
+    border-radius: 3px;
+}
+
+.overlay{
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.overlay img {
+    width: 800px;
+    height: 800px;
+  }
+
+  .cursor{
+    z-index: 9999;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: .1s;
+}
+.cursor.shrink2{
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+}
+
+.cursor.grow{
+    width: 30px;
+    height: 30px;
+}
+
+.back {
+    display: inline-block;
+  width: 50px;
+  height: 50px;
+  right: 3%;
+  line-height:60px;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  z-index:999;
+  padding: 2rem;
+}
+
+.back i{
+    font-size: 40px;
+    color:#000;
+}
+
+.back i:hover{
+    color: #f0f0f0;
+    transition: .7s;
+}
+
+@media screen and (max-width:768px){
+    .cursor{
+        border:transparent;
+    }
+}
+
+@media screen and (max-width:768px){
+    .cursor{
+        border:transparent;
+    }
+}
+/* -----back to home page----- */
+
+@media (min-width: 768px) {
+    .Row {
+        z-index: 2;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        display: none;
+    }
+  }
+
+.grid{
+    overflow: hidden;
+    display:none;
+    z-index: 2;
+    height: 80vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;    
+    opacity: 1;
+    background-attachment: fixed;
+    border: 1px solid #ff057a;
+    border-width: 0px 1px 1px 0px;
+    background-clip: border-box;
+    padding: 4px;
+    background:linear-gradient(180deg, #ffffff 0%, #ffffff 100%), #f0f0f0;opacity:1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.Column {
+    width: 100%;
+    z-index: 2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.small{
+    display:none;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    height: 60vh;
+    padding: 4px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    opacity: 1;
+    background:linear-gradient(180deg, #ffffff 0%, #ffffff 100%), #f0f0f0;opacity:1;
+    background-attachment: fixed;
+    border: 1px solid #ff057a;
+    border-width: 0px 1px 1px 0px;
+    background-clip: border-box;
+    
+}
+
+.content h1{
+    position: relative;
+    padding: 1rem;
+    font-size: 35px;
+}
+.content footer h2{
+    font-size: 25px;
+}
+
+.content footer .heading2{
+    margin-top: 620px;
+}
+
+.content footer .heading{
+    margin-top: 427px;
+}
+
+.menu-btn{
+    position :absolute;
+    display : none;
+    width: 70px;
+    height: 45px;
+    transition: all .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    z-index: 9999;
+    padding-top: 4rem;
+    padding-right: 2rem;
+}
+
+.menu-btn-burger{
+    width: 30px;
+    height: 4px;
+    background: #000;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+   
+}
+
+.menu-btn-burger::before,
+.menu-btn-burger::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #000;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    transform: translateY(-9px);
+    
+}
+
+.menu-btn-burger::after{
+    transform: translateY(9px);
+}
+
+.slide-up {
+    animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;         
+  }
+  
+  @keyframes slide-up {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(5px);
+    }
+  }
+  
+  .slide-down {
+    animation: slideUp ease 0.9s ;        
+  }
+  
+  @keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(-0px);opacity:1;
+    }
+  }
