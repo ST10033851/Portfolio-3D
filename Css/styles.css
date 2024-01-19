@@ -299,6 +299,7 @@ h1.TitleW:hover::after{
     background-clip: border-box;
     padding: 4px;
     background:linear-gradient(180deg, #ffffff 0%, #ffffff 100%), #f0f0f0;opacity:1;
+    transition: background-color 0.3s ease;
 }
 
 .grid:nth-of-type(1):hover{

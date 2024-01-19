@@ -153,6 +153,3 @@ Wierd.addEventListener('click', () => {
     }, 500);
   
 })
-
-
-

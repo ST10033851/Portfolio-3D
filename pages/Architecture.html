@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="cursor"></div> 
-    <section class ="home">
+    <section class ="home" id="home">
         <div class="box-container">
             <div class="box">
                 <a class = "back">
@@ -42,7 +42,7 @@
     </header>   
     <div class="Row">                            
         <div class="Column">                   
-                <div data-interactive="true" class="grid hovering" id = "grid">
+                <div data-interactive="true" class="grid" id = "grid">
                     <div id="first-content" class="content">
                         <h1 class="Title">3D Architecture</h1>
                         <footer>
@@ -51,7 +51,7 @@
                         </footer>                        
                     </div> 
                 </div>                    
-            <div data-interactive="true" class="small" id = "portraits">
+            <div data-interactive="true" class="small " id = "portraits">
                 <div id="first-content" class="content">
                     <h1 class="TitleP">Portraits</h1>                                 
                 </div>              
@@ -81,19 +81,21 @@
     
         <div class="box-containerP">
     
-            <div class="Box">
+            <div class="Box"  >
                 
                 <img src="../images/library.png" alt="">
                 
             </div>
             <div class="Box">
                 <img src="../images/cyberpunk city .png" alt="">
-                
             </div>
             
         </div>
     
     </section>
+    <div class="full-image-overlay">
+        <img id="fullImage" src="" alt="">
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     
 

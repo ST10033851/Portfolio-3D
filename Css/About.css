@@ -282,7 +282,7 @@ body{
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
-        display: flex;
+        display: none;
     }
   }
   @media screen and (max-width:768px){
